@@ -2,6 +2,13 @@
 
 A full-stack authentication system built as part of the Growfinix Technology Full-Stack Development Internship (Task 1). It implements user registration, login, and JWT-based route protection using Spring Boot and React.
 
+## Live Demo
+
+- **Frontend (Vercel):** https://growfinix-java-fullstack-internship.vercel.app/
+- **Backend API (Render):** https://growfinix-java-fullstack-internship.onrender.com
+
+> Note: The backend is hosted on Render's free tier, which spins down after periods of inactivity. The first request may take 30-60 seconds to respond while the server wakes up.
+
 ## Tech Stack
 
 **Backend:**
@@ -23,8 +30,9 @@ A full-stack authentication system built as part of the Growfinix Technology Ful
 - User login with credential verification
 - JWT token generation on successful login
 - Protected API routes that require a valid JWT via `Authorization: Bearer <token>` header
-- CORS configured to allow frontend-backend communication across ports
+- CORS configured to allow frontend-backend communication across ports and deployed domains
 - Custom JWT filter that validates tokens on every request to protected routes
+- **Deployed live** (Task 5 of the internship): Dockerized Spring Boot backend on Render, React frontend on Vercel, PostgreSQL on Render, with credentials managed via environment variables (not hardcoded)
 
 ## Project Structure
 
