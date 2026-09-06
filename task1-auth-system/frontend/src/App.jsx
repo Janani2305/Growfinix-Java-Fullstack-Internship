@@ -1,4 +1,4 @@
- import { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Register from './Register';
 import Login from './login';
@@ -9,7 +9,7 @@ function App() {
   const fetchProfile = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:8080/api/auth/profile', {
+       const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfileMessage(response.data);
