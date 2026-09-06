@@ -1,0 +1,114 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* ---- Form ---- */
+.enquiry-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.enquiry-form input,
+.enquiry-form select {
+  padding: 8px;
+  flex: 1 1 150px;
+}
+
+.enquiry-form button {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ---- Table (default: desktop) ---- */
+.enquiry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.enquiry-table th,
+.enquiry-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.enquiry-table th {
+  background-color: #f3f4f6;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: white;
+}
+
+.status-new { background-color: #3b82f6; }
+.status-contacted { background-color: #f59e0b; }
+.status-closed { background-color: #10b981; }
+
+.actions-cell button {
+  margin-right: 6px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn { background-color: #fbbf24; }
+.delete-btn { background-color: #ef4444; color: white; }
+
+/* ---- Mobile: transform table into stacked cards ---- */
+@media screen and (max-width: 640px) {
+  .enquiry-table thead {
+    display: none; /* hide column headers, we'll show labels per field instead */
+  }
+
+  .enquiry-table, 
+  .enquiry-table tbody, 
+  .enquiry-table tr, 
+  .enquiry-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .enquiry-table tr {
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .enquiry-table td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Show the field name using the data-label attribute set in JSX */
+  .enquiry-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+  }
+
+  .actions-cell {
+    justify-content: flex-start !important;
+  }
+
+  .actions-cell::before {
+    display: none;
+  }
+}
